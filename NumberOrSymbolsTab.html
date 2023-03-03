@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Keyboard</title>
+	<style>
+		.keyboard {
+			display: inline-block;
+			border: 1px solid #ccc;
+			padding: 10px;
+			border-radius: 5px;
+			box-shadow: 0 0 10px rgba(0,0,0,0.3);
+			background-color: #fff;
+			font-size: 18px;
+			line-height: 1.5;
+			font-family: sans-serif;
+			user-select: none;
+		}
+		.row {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin-bottom: 10px;
+		}
+		.key {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 50px;
+			height: 50px;
+			border: 1px solid #ccc;
+			border-radius: 5px;
+			cursor: pointer;
+			margin: 0 10px;
+		}
+		.key:hover {
+			background-color: #f1f1f1;
+		}
+		.key:active {
+			background-color: #ccc;
+		}
+		.space {
+			width: 300px;
+		}
+	</style>
+</head>
+<body>
+	<input type="text" id="input-field">
+	<div class="keyboard">
+	<div class="row">
+		<div class="key" onclick="addChar('1')">1</div>
+		<div class="key" onclick="addChar('2')">2</div>
+		<div class="key" onclick="addChar('3')">3</div>
+		<div class="key" onclick="addChar('4')">4</div>
+		<div class="key" onclick="addChar('5')">5</div>
+		<div class="key" onclick="addChar('6')">6</div>
+		<div class="key" onclick="addChar('7')">7</div>
+		<div class="key" onclick="addChar('8')">8</div>
+		<div class="key" onclick="addChar('9')">9</div>
+		<div class="key" onclick="addChar('0')">0</div>
+	</div>
+	<div class="row">
+		<div class="key" onclick="addChar('@')">@</div>
+		<div class="key" onclick="addChar('#')">#</div>
+		<div class="key" onclick="addChar('$')">$</div>
+		<div class="key" onclick="addChar('_')">_</div>
+		<div class="key" onclick="addChar('&')">&</div>
+		<div class="key" onclick="addChar('-')">-</div>
+		<div class="key" onclick="addChar('+')">+</div>
+		<div class="key" onclick="addChar('(')">(</div>
+		<div class="key" onclick="addChar(')')">)</div>
+		<div class="key" onclick="addChar('/')">/</div>
+	</div>
+    <div class="row">
+		<div class="key" onclick="addChar('*')">*</div>
+		<div class="key" onclick="addChar('&quot;')">"</div>
+        <div class="key" onclick="addChar('&apos;')">'</div>
+		<div class="key" onclick="addChar(':')">:</div>
+		<div class="key" onclick="addChar(';')">;</div>
+		<div class="key" onclick="addChar('!')">!</div>
+		<div class="key" onclick="addChar('?')">?</div>
+		<div class="key delete" onclick="deleteCharacter()"><img src="delete.svg"></div>
+	</div>
+    <div class="row">
+		<div class="key space" onclick="addChar(' ')"></div>
+	</div>
+	</div>
+<script>
+const inputField = document.getElementById("input-field");
+
+function addChar(value) {
+  inputField.value += value;
+}
+
+function deleteCharacter() {
+  inputField.value = inputField.value.slice(0, -1);
+}
+
+</script>
+</body>
+</html>
